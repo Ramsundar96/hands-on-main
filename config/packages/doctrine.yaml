@@ -1,0 +1,25 @@
+doctrine:
+    dbal:
+        driver: 'pdo_sqlite'
+        path: '%kernel.project_dir%/var/data.db'
+
+        # IMPORTANT: You MUST configure your server version,
+        # either here or in the DATABASE_URL env var (see .env file)
+        #server_version: '16'
+
+        profiling_collect_backtrace: '%kernel.debug%'
+        use_savepoints: true
+when@test:
+    doctrine:
+        dbal:
+            path: '%kernel.project_dir%/var/data_test.db'
+
+
+when@prod:
+    framework:
+        cache:
+            pools:
+                doctrine.result_cache_pool:
+                    adapter: cache.app
+                doctrine.system_cache_pool:
+                    adapter: cache.system
