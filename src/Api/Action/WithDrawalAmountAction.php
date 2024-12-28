@@ -1,7 +1,5 @@
 <?php
 
-// src/Api/Action/WithdrawMoneyAction.php
-
 namespace App\Api\Action;
 
 use App\Api\Dto\WithdrawMoneyDto;
